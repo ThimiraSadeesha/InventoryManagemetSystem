@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{984D265D-FA3A-4632-B55F-814E021DBCFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SparePartsPOS</RootNamespace>
+    <AssemblyName>SparePartsPOS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Brand.cs" />
+    <Compile Include="Cashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cashier.Designer.cs">
+      <DependentUpon>Cashier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryModule.Designer.cs">
+      <DependentUpon>CategoryModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashbord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashbord.Designer.cs">
+      <DependentUpon>dashbord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dbconnect.cs" />
+    <Compile Include="Discount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gallePartsDataSet.cs">
+      <DependentUpon>gallePartsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gallePartsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gallePartsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LookupProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LookupProduct.Designer.cs">
+      <DependentUpon>LookupProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagestckFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagestckFrom.Designer.cs">
+      <DependentUpon>ManagestckFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductModule.Designer.cs">
+      <DependentUpon>ProductModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductStockin.Designer.cs">
+      <DependentUpon>ProductStockin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Qty.Designer.cs">
+      <DependentUpon>Qty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recipt.Designer.cs">
+      <DependentUpon>Recipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartsPOSDataSet.cs">
+      <DependentUpon>SparePartsPOSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartsPOSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SparePartsPOSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Stockin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stockin.Designer.cs">
+      <DependentUpon>Stockin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockModule.Designer.cs">
+      <DependentUpon>StockModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplier.Designer.cs">
+      <DependentUpon>supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supplierModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplierModule.Designer.cs">
+      <DependentUpon>supplierModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Useraccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Useraccount.Designer.cs">
+      <DependentUpon>Useraccount.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Cashier.resx">
+      <DependentUpon>Cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryModule.resx">
+      <DependentUpon>CategoryModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashbord.resx">
+      <DependentUpon>dashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LookupProduct.resx">
+      <DependentUpon>LookupProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagestckFrom.resx">
+      <DependentUpon>ManagestckFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductModule.resx">
+      <DependentUpon>ProductModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductStockin.resx">
+      <DependentUpon>ProductStockin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Qty.resx">
+      <DependentUpon>Qty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recipt.resx">
+      <DependentUpon>Recipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stockin.resx">
+      <DependentUpon>Stockin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockModule.resx">
+      <DependentUpon>StockModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplier.resx">
+      <DependentUpon>supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierModule.resx">
+      <DependentUpon>supplierModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Useraccount.resx">
+      <DependentUpon>Useraccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="gallePartsDataSet.xsc">
+      <DependentUpon>gallePartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="gallePartsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gallePartsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gallePartsDataSet.xss">
+      <DependentUpon>gallePartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SparePartsPOSDataSet.xsc">
+      <DependentUpon>SparePartsPOSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SparePartsPOSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SparePartsPOSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SparePartsPOSDataSet.xss">
+      <DependentUpon>SparePartsPOSDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
